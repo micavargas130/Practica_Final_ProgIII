@@ -12,11 +12,14 @@ int ArbolBinarioAVL<T>::contarHastaNivel(NodoArbolAVL<T> *r, int n) {
     if (n>=0){ return sumIzq+sumDer+r->getDato();} //puedo poner (n<=0) si quiero que me cuente despues del nivel ingresado
 
     return sumIzq+sumDer;
+    
+    
+----------------------------------------------------------------------------------
+    
 
 //contar cuantos niveles hay 
 int ArbolBinarioAVL<T>::contarPorNivel(NodoArbolAVL<T> *r)
-{//Lista<int> li;
-//Lista<int>li2;
+{
     if (r !=nullptr)
     {
         int izq=contarPorNivel(r->izq)+1;
@@ -31,6 +34,10 @@ int ArbolBinarioAVL<T>::contarPorNivel(NodoArbolAVL<T> *r)
 
     return -1;
 }
+
+
+---------------------------------------------------------------------------------
+
 //Mostrar cuantos nodos hay en un nivel
 int ArbolBinarioAVL<T>::contarHastaNivel(NodoArbolAVL<T> *r, int n) {
 
