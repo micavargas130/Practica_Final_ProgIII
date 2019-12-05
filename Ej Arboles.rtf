@@ -51,3 +51,21 @@ contarHastaNivel(r->izq,n-1);
 contarHastaNivel(r->der,n-1);
 
 }
+
+----------------------------------------------------------------------------------
+
+//Sumar todas las hojas de un arbol
+
+template<class T>
+int ArbolBinarioAVL<T>::SumarHojas(NodoArbolAVL<T> *r) {
+    if (r ==nullptr)
+    {
+        return 0;
+    }
+
+    int porIzq=SumarHojas(r->izq);
+    int porDer=SumarHojas(r->der);
+
+
+    return porIzq+porDer+r->getDato();
+}
