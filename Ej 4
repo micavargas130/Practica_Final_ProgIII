@@ -1,0 +1,37 @@
+//hay que arreglar para que muestre bien el menor
+
+template<class T>
+int ArbolBinarioAVL<T>::chicoGrande(NodoArbolAVL<T> *r) {
+
+    int nivel = 0;
+    int nivel2 = 0;
+    if (r == nullptr) { return 0; }
+    else {
+        int mayor = 0;
+        int menor = 100; //si el menor fuera 101 ya no funcionaria 
+
+        int izq = chicoGrande(r->izq) + 1;
+        if (r->getDato() > mayor) {
+            mayor = r->getDato();
+            nivel = izq;
+        }
+        if (r->getDato() < menor) {
+            menor = r->getDato();
+            nivel2 = izq;
+        }
+
+        int der = chicoGrande(r->der) + 1;
+
+
+        if (r->getDato() > mayor) {
+            mayor = r->getDato();
+            nivel = der;
+        }
+        if (r->getDato() < menor) {
+            menor = r->getDato();
+            nivel2 = izq;
+        }
+
+        return nivel; //nivel del nodo mas alto
+    }
+}
