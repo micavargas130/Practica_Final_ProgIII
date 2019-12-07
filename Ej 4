@@ -1,4 +1,4 @@
-//hay que arreglar para que muestre bien el menor
+//hay que arreglar para que muestre los dos valores
 
 template<class T>
 int ArbolBinarioAVL<T>::chicoGrande(NodoArbolAVL<T> *r) {
@@ -8,7 +8,7 @@ int ArbolBinarioAVL<T>::chicoGrande(NodoArbolAVL<T> *r) {
     if (r == nullptr) { return 0; }
     else {
         int mayor = 0;
-        int menor = 100; //si el menor fuera 101 ya no funcionaria 
+        int menor = tamanio;
 
         int izq = chicoGrande(r->izq) + 1;
         if (r->getDato() > mayor) {
