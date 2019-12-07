@@ -1,0 +1,39 @@
+#include <iostream>
+
+#include "../Lista/Lista.h"
+#include "../Ej-02/Pila.h"
+
+template <class T>
+int sacarLista(Lista<T> &L, Pila<T> &P ) {
+
+    while (!P.esVacia())
+    {
+        L.remover(P.pop());
+    }
+
+}
+
+int main() {
+
+Lista<int> A;
+Pila<int> P;
+int n;
+cout<<"ingrese numeros de la Lista"<<endl;
+for (int i=0; i<6;i++)
+{cin>>n;
+A.insertarUltimo(n);}
+
+    cout<<"ingrese numeros de la Pila"<<endl;
+    for (int i=0; i<3;i++)
+    {cin>>n;
+    P.push(n);}  //recordar que el la primera posicion es 0;
+
+cout<<"Su Lista:"<<endl;
+A.print();
+
+cout<<"Su lista sin elementos de la pila:"<<endl;
+
+sacarLista(A,P);
+A.print();
+    
+}
