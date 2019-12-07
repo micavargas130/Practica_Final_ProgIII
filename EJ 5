@@ -1,0 +1,20 @@
+template<class T>
+int Lista<T>::Devolverarticulo(int articulo) {
+    Nodo<int> *aux = inicio;
+    int a = 0;
+
+
+    while (aux->getSiguiente() != nullptr) {
+        inicio->setDato(articulo);
+        aux = aux->getSiguiente();
+        if (aux->getDato() == inicio->getDato()) {
+            a++;
+        } else {
+            cout << "Articulo:" << aux->getDato() << endl;
+        }
+
+    }
+    cout << "Cant de elementos del articulo ingresado: " << a << endl;
+}
+
+//ver como hacer para mostrar el articulo ingresado
