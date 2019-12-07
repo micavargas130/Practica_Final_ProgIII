@@ -1,0 +1,48 @@
+//Escriba una función void recursiva que reciba como parámetro solo un entero positivo
+//n y que despliegue todos los enteros impares menores a n.
+
+void menores(int n) {
+    int a = n - 1;
+
+    if (n==0) { return;}
+
+    if (a % 2 != 0) {
+            cout<<a<<endl;
+        }
+
+    return menores(n - 1);
+}
+
+----------------------------------------------------------
+
+//encontrar el mas chico de un arreglo
+
+int maschico(int *arr, unsigned int size)
+{
+    int chico=arr[0];
+    if (arr[size]< chico) {
+        chico=arr[size];
+        return chico;
+    }
+    else
+
+    {
+        return maschico(arr,size-1);
+    }
+}
+
+------------------------------------------------------------
+
+//Escribir una función recursiva que tenga un parámetro que sea entero positivo y
+//despliegue en la pantalla ese número de asteriscos: “*”, todos en una línea.
+
+void asteriscos (unsigned int n) {
+
+    if (n == 0) {
+        return;
+    } else {
+        cout << "*";
+    }
+
+    return asteriscos(n - 1);
+}
