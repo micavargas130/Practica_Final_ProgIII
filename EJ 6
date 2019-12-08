@@ -1,0 +1,23 @@
+#include <iostream>
+#include "sumatoria.h"
+using namespace std;
+
+
+int Busqueda_Binaria(int *array,int size, int n) {
+    int min = 0;
+    int max = size;
+
+    while (min<=max) {
+        int medio = (min + max) / 2;
+        int guess = array[medio];
+
+        if (guess == n) { return 1; } //si encuentra el dato devuelve 0
+
+        if (guess > n) {
+            max = medio - 1; //le resto uno para que sea menor que el medio
+        } else {
+            min = medio + 1;
+        }
+    }
+    return 0;  //si no encuentra el dato devuelve 0
+}
