@@ -1,20 +1,23 @@
 template<class T>
-int Lista<T>::Devolverarticulo(int articulo) {
-    Nodo<int> *aux = inicio;
-    int a = 0;
+int Lista<T>::Articulo(int articulo) {
+    Nodo<int> *Cant_Pedida=inicio;
+    int a=0;
 
+    if (Cant_Pedida->getDato()==articulo)
+    {a++;
+     cout<<"Articulo: "<<Cant_Pedida->getDato()<<endl;}
 
-    while (aux->getSiguiente() != nullptr) {
+    while (Cant_Pedida->getSiguiente()!= nullptr) {
+
+        Cant_Pedida=Cant_Pedida->getSiguiente();
         inicio->setDato(articulo);
-        aux = aux->getSiguiente();
-        if (aux->getDato() == inicio->getDato()) {
-            a++;
-        } else {
-            cout << "Articulo:" << aux->getDato() << endl;
-        }
 
+
+        if (Cant_Pedida->getDato() == inicio->getDato()){ a++; }
+
+        else {cout << "Articulo:" << Cant_Pedida->getDato()<<endl; }
     }
-    cout << "Cant de elementos del articulo ingresado: " << a << endl;
+
+    cout<<"Cant de elementos del articulo ingresado="<<a<<endl;
 }
 
-//ver como hacer para mostrar el articulo ingresado
